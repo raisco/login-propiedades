@@ -1,0 +1,43 @@
+Desarrollar una aplicación para dispositivo móvil que refleje el diseño mostrado en la imagen, enfocándose en el funcionamiento y no en los colores o la tipografía (a menos que se indique lo contrario).
+
+Funcionamiento y requisitos:
+
+Pantalla de Inicio de Sesión:
+
+Solicitar al usuario ingresar un username y un password.
+
+El usuario será el contenido del campo username y la contraseña será el valor de passwordValue.
+
+Al presionar el botón Aceptar, validar el login.
+
+En caso de error en el login, mostrar un mensaje adecuado.
+
+La opción recordarme debe guardar el nombre de usuario para mostrarlo automáticamente en el próximo inicio de sesión.
+
+Lista de Propiedades:
+
+Si el login es exitoso, mostrar una lista de propiedades obtenidas desde la URL indicada.
+
+Al seleccionar un elemento de la lista, recuperar los datos de esa propiedad (por su ID) y mostrar otra pantalla con la información detallada y sus comentarios.
+
+Navegación y Usabilidad:
+
+En todos los casos debe existir un mecanismo para volver atrás (a elección del usuario).
+
+Debe haber también una forma clara de salir de la aplicación.
+
+URLs para consumir datos (API simuladas con JSONPlaceholder):
+
+Usuarios (para login):
+https://jsonplaceholder.typicode.com/users
+(mapeada a: https://previosdata/api/users)
+
+Lista de propiedades:
+https://jsonplaceholder.typicode.com/posts
+(mapeada a: https://previosdata/api/properties/)
+
+Detalle de propiedad y comentarios:
+https://jsonplaceholder.typicode.com/comments?postId={id}
+(mapeada a: https://previosdata/api/properties/data/?)
+
+react bnative expo -::    npx create-expo-app miApp --template blank
