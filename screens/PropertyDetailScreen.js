@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 
-export default function PropertyDetailScreen({ route }) {
+export default function PropertyDetailScreen({ navigation, route }) {
   const { propiedad } = route.params;
   const [comentarios, setComentarios] = useState([]);
 
@@ -16,10 +22,20 @@ export default function PropertyDetailScreen({ route }) {
 
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigation.goBack()}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.backButtonText}>←</Text>
+        </TouchableOpacity>
+        <Text style={styles.headerText}>Detalles</Text>
+      </View>
       <View style={styles.propertyCard}>
         <Text style={styles.propertyId}>ID: {propiedad.id}</Text>
-        <Text style={styles.propertyTitle}>Título: {propiedad.title}</Text>
-        <Text style={styles.propertyBody}>Descripción: {propiedad.body}</Text>
+        <Text style={styles.propertyTitle}>{propiedad.title}</Text>
+        <Text style={styles.propertyBody}>{propiedad.body}</Text>
       </View>
 
       <View style={styles.commentsSection}>
@@ -40,6 +56,40 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f5f5f5",
+  },
+  header: {
+    backgroundColor: "#fff",
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e0e0e0",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  backButton: {
+    backgroundColor: "transparent",
+    padding: 10,
+    marginRight: 15,
+    marginTop: 5,
+    borderRadius: 20,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: "#2196F3",
+    fontWeight: "bold",
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#333",
+    marginTop: 10,
   },
   propertyCard: {
     backgroundColor: "#fff",

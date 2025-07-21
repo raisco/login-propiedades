@@ -70,6 +70,9 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={{ padding: 20 }}>
+      <Text style={{ fontSize: 24, marginBottom: 20, marginTop: 40 }}>
+        Iniciar Sesión
+      </Text>
       <Text>Usuario</Text>
       <TextInput
         value={username}

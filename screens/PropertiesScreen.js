@@ -20,6 +20,13 @@ export default function PropertiesScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigation.goBack()}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.backButtonText}>←</Text>
+        </TouchableOpacity>
         <Text style={styles.headerText}>Lista de Propiedades</Text>
       </View>
 
@@ -52,7 +59,6 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#fff",
     padding: 20,
-    paddingTop: 15,
     borderBottomWidth: 1,
     borderBottomColor: "#e0e0e0",
     shadowColor: "#000",
@@ -63,17 +69,26 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 3.84,
     elevation: 5,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  backButton: {
+    backgroundColor: "transparent",
+    padding: 10,
+    marginRight: 15,
+    marginTop: 5,
+    borderRadius: 20,
+  },
+  backButtonText: {
+    fontSize: 24,
+    color: "#2196F3",
+    fontWeight: "bold",
   },
   headerText: {
     fontSize: 24,
     fontWeight: "bold",
     color: "#333",
-    marginBottom: 4,
-  },
-  subHeaderText: {
-    fontSize: 14,
-    color: "#666",
-    fontStyle: "italic",
+    marginTop: 10,
   },
   scrollView: {
     flex: 1,
@@ -92,7 +107,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 3,
     borderLeftWidth: 4,
-    borderLeftColor: "#2196F3",
+    borderLeftColor: "#21f32fff",
   },
   cardContent: {
     padding: 15,
