@@ -40,6 +40,33 @@ export default function LoginScreen({ navigation }) {
       Alert.alert("Error", "Hubo un problema al iniciar sesión.");
     }
   };
+  /*
+    const handleLogin = () => {
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((res) => res.json())
+        .then((users) => {
+          const user = users.find((u) => u.username === username);
+
+          if (user && password === "123") {
+            if (remember) {
+              AsyncStorage.setItem("rememberedUser", username)
+                .then(() => AsyncStorage.setItem("rememberedPassword", password))
+                .then(() => navigation.navigate("Propiedades"));
+            } else {
+              navigation.navigate("Propiedades");
+            }
+          } else {
+            Alert.alert("Error", "Usuario o contraseña incorrectos.");
+            console.log("Usuario o contraseña incorrectos");
+          }
+        })
+        .catch((error) => {
+          Alert.alert("Error", "Hubo un problema al iniciar sesión.");
+          console.error(error);
+        });
+};
+
+   */
 
   return (
     <View style={{ padding: 20 }}>
